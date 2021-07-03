@@ -4,7 +4,7 @@
         <link href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
         <link rel = "icon" href = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.OKxxhV6eTSxBNQfaJK2GFgHaHa%26pid%3DApi&f=1" type = "image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Date and Time</title>
+        <title>Day Information</title>
     </head>
     <body>
         <style>
@@ -21,21 +21,33 @@
         </style>
         <script>
             document.write ("<br>")
-let currentDate2 = new Date();
-let time = currentDate2.getHours() + ":" + currentDate2.getMinutes();
-document.write(time + "<br><br>");
-
-let currentDate = new Date();
-let cDay = currentDate.getDate()
-let cMonth = currentDate.getMonth() + 1
-let cYear = currentDate.getFullYear();
-document.write(cMonth + "/");
-document.write (cDay + "/");
-document.write(cYear);
+            var d = new Date();
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+            var n = weekday[d.getDay()];
+            document.write (n + "<br>");
+            
+            let currentDate2 = new Date();
+            let time = currentDate2.getHours() + ":" + currentDate2.getMinutes();
+            document.write(time + "<br>");
+            
+            let currentDate = new Date();
+            let cDay = currentDate.getDate()
+            let cMonth = currentDate.getMonth() + 1
+            let cYear = currentDate.getFullYear();
+            document.write(cMonth + "/");
+            document.write (cDay + "/");
+            document.write(cYear);
 
 setInterval(function(){
     window.location.reload(true); 
-}, 60000); 
+}, 60000);  
         </script>
     </body>
 </html>
